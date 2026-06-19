@@ -1,8 +1,63 @@
-<h2 mat-dialog-title>Add user</h2>
 <mat-dialog-content>
-HIER NUTZER HIZUFÜGEN
+  <h2 mat-dialog-title>Add new user</h2>
+
+  <div>
+    <mat-form-field class="m-r-16" appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input [(ngModel)]="user.firstName" matInput placeholder="Please enter a name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input [(ngModel)]="user.lastName" matInput placeholder="Please enter a name" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="w-212p m-r-16" appearance="outline">
+      <mat-label>Birthdate</mat-label>
+      <input [(ngModel)]="user.birthdate" matInput placeholder="Please enter a date" matInput [matDatepicker]="picker" />
+      <mat-datepicker-toggle matIconSuffix [for]="picker"> </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Gender</mat-label>
+      <mat-select [(ngModel)]="user.gender">
+        <mat-option value="Male">Male</mat-option>
+        <mat-option value="Female">Female</mat-option>
+        <mat-option value="Diverse">Diverse</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Country</mat-label>
+      <input [(ngModel)]="user.country" matInput placeholder="Please enter a country" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="m-r-16" appearance="outline">
+      <mat-label>City</mat-label>
+      <input [(ngModel)]="user.city" matInput placeholder="Please enter a city" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Zip code</mat-label>
+      <input  [(ngModel)]="user.zipCode" matInput placeholder="Please enter zip code" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Street & House Number</mat-label>
+      <input [(ngModel)]="user.streetAndHouseNumber" matInput placeholder="Please enter details" />
+    </mat-form-field>
+  </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button matButton >Cancel</button>
-  <button matButton cdkFocusInitial>Save</button>
+  <button matButton>Cancel</button>
+  <button (click)="saveUser()" matButton cdkFocusInitial>Save</button>
 </mat-dialog-actions>

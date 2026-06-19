@@ -13,6 +13,7 @@ import { DialogAddUserComponent } from '../../components/dialog-add-user-compone
 })
 export class User {
   readonly dialog = inject(MatDialog);
+
   openDialog() {
     this.dialog.open(DialogAddUserComponent);
   }
