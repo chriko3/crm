@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatDialogContent, MatDialogActions } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,8 +30,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class DialogAddUserComponent {
   user = new User();
+  birthdate: Date | null = null;
 
-  saveUser(){
+  saveUser() {
+    this.user.birthdate = this.birthdate?.getTime() ?? null;
     console.log(this.user);
   }
 }

@@ -12,11 +12,11 @@ export class User {
     if (obj) {
       this.firstName = obj ? obj.firstName : '';
       this.lastName = obj ? obj.lastName : '';
-      this.birthdate = obj ? obj.birthdate : null;
+      this.birthdate = obj ? obj.birthdate : 0;
       this.gender = obj ? obj.gender : '';
       this.country = obj ? obj.country : '';
       this.city = obj ? obj.city : '';
-      this.zipCode = obj ? obj.zipCode : null;
+      this.zipCode = obj ? obj.zipCode : 0;
       this.streetAndHouseNumber = obj ? obj.streetAndHouseNumber : '';
     }
   }

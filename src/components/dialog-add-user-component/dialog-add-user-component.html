@@ -16,7 +16,7 @@
   <div>
     <mat-form-field class="w-212p m-r-16" appearance="outline">
       <mat-label>Birthdate</mat-label>
-      <input [(ngModel)]="user.birthdate" matInput placeholder="Please enter a date" matInput [matDatepicker]="picker" />
+      <input [(ngModel)]="birthdate" matInput placeholder="Please enter a date" matInput [matDatepicker]="picker" />
       <mat-datepicker-toggle matIconSuffix [for]="picker"> </mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
